@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BA298DE-CC9A-4F5E-88BB-28F06B58D6DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Npgsql</RootNamespace>
+    <AssemblyName>UnityNpgsql</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NpgsqlTypes\ArrayHandling.cs" />
+    <Compile Include="NpgsqlTypes\BitString.cs" />
+    <Compile Include="NpgsqlTypes\DateDatatypes.cs" />
+    <Compile Include="NpgsqlTypes\ExpectedTypeConverter.cs" />
+    <Compile Include="NpgsqlTypes\FastConverter.cs" />
+    <Compile Include="NpgsqlTypes\FastPath.cs" />
+    <Compile Include="NpgsqlTypes\FastPathArg.cs" />
+    <Compile Include="NpgsqlTypes\LargeObject.cs" />
+    <Compile Include="NpgsqlTypes\LargeObjectManager.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlDbType.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlNativeToBackendOptions.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypeConvBackendToNative.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypeConvNativeToBackend.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypeInfoBackend.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypeInfoNative.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypeMappings.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypes.cs" />
+    <Compile Include="NpgsqlTypes\NpgsqlTypesHelper.cs" />
+    <Compile Include="Npgsql\ASCIIBytes.cs" />
+    <Compile Include="Npgsql\BackendEncoding.cs" />
+    <Compile Include="Npgsql\Cache.cs" />
+    <Compile Include="Npgsql\HashAlgorithm.cs" />
+    <Compile Include="Npgsql\MD5.cs" />
+    <Compile Include="Npgsql\MD5CryptoServiceProvider.cs" />
+    <Compile Include="Npgsql\NpgsqlAsciiRow.cs" />
+    <Compile Include="Npgsql\NpgsqlBackEndKeyData.cs" />
+    <Compile Include="Npgsql\NpgsqlBind.cs" />
+    <Compile Include="Npgsql\NpgsqlCancelRequest.cs" />
+    <Compile Include="Npgsql\NpgsqlClosedState.cs" />
+    <Compile Include="Npgsql\NpgsqlCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlCommand.PrepareExecute.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlCommand.Rewrite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlConnectedState.cs" />
+    <Compile Include="Npgsql\NpgsqlConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlConnectionStringBuilder.cs" />
+    <Compile Include="Npgsql\NpgsqlConnector.cs" />
+    <Compile Include="Npgsql\NpgsqlConnectorPool.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyFormat.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyIn.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyInState.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyInStream.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyOut.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyOutState.cs" />
+    <Compile Include="Npgsql\NpgsqlCopyOutStream.cs" />
+    <Compile Include="Npgsql\NpgsqlCopySerializer.cs" />
+    <Compile Include="Npgsql\NpgsqlDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Npgsql\NpgsqlDataReader.cs" />
+    <Compile Include="Npgsql\NpgsqlDescribe.cs" />
+    <Compile Include="Npgsql\NpgsqlError.cs" />
+    <Compile Include="Npgsql\NpgsqlEventLog.cs" />
+    <Compile Include="Npgsql\NpgsqlException.cs" />
+    <Compile Include="Npgsql\NpgsqlExecute.cs" />
+    <Compile Include="Npgsql\NpgsqlFactory.cs" />
+    <Compile Include="Npgsql\NpgsqlFlush.cs" />
+    <Compile Include="Npgsql\NpgsqlMediator.cs" />
+    <Compile Include="Npgsql\NpgsqlMessageTypes.cs" />
+    <Compile Include="Npgsql\NpgsqlNotificationEventArgs.cs" />
+    <Compile Include="Npgsql\NpgsqlParameter.cs" />
+    <Compile Include="Npgsql\NpgsqlParameterCollection.cs" />
+    <Compile Include="Npgsql\NpgsqlParameterStatus.cs" />
+    <Compile Include="Npgsql\NpgsqlParse.cs" />
+    <Compile Include="Npgsql\NpgsqlPasswordPacket.cs" />
+    <Compile Include="Npgsql\NpgsqlPromotableSinglePhaseNotification.cs" />
+    <Compile Include="Npgsql\NpgsqlQuery.cs" />
+    <Compile Include="Npgsql\NpgsqlReadyState.cs" />
+    <Compile Include="Npgsql\NpgsqlResourceManager.cs" />
+    <Compile Include="Npgsql\NpgsqlRow.cs" />
+    <Compile Include="Npgsql\NpgsqlRowDescription.cs" />
+    <Compile Include="Npgsql\NpgsqlSchema.cs" />
+    <Compile Include="Npgsql\NpgsqlStartupPacket.cs" />
+    <Compile Include="Npgsql\NpgsqlStartupState.cs" />
+    <Compile Include="Npgsql\NpgsqlState.BackendResponse.cs" />
+    <Compile Include="Npgsql\NpgsqlState.cs" />
+    <Compile Include="Npgsql\NpgsqlSync.cs" />
+    <Compile Include="Npgsql\NpgsqlTransaction.cs" />
+    <Compile Include="Npgsql\NpgsqlTransactionCallbacks.cs" />
+    <Compile Include="Npgsql\PGUtil.cs" />
+    <Compile Include="Npgsql\SSPIHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Npgsql\NpgsqlMetaData.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
