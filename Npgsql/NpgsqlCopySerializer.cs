@@ -29,7 +29,7 @@ using System.IO;
 using System.Text;
 using System.Globalization;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Writes given objects into a stream for PostgreSQL COPY in default copy format (not CSV or BINARY).

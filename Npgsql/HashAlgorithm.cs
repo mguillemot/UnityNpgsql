@@ -15,7 +15,7 @@
 using System;
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     // Comment: Removed the ICryptoTransform implementation as this interface may be not supported by
     // all platforms.

@@ -28,7 +28,7 @@
 
 using System;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Represents information about COPY operation data transfer format as returned by server.

@@ -38,7 +38,7 @@
 //
 //
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Common base class for all derived MD5 implementations.

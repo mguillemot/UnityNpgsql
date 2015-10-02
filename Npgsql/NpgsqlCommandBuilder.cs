@@ -1,4 +1,4 @@
-// NpgsqlCommandBuilder.cs
+﻿// NpgsqlCommandBuilder.cs
 //
 // Author:
 //   Pedro Martínez Juliá (yoros@wanadoo.es)
@@ -30,9 +30,9 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     ///<summary>
     /// This class is responsible to create database commands for automatic insert, update and delete operations.

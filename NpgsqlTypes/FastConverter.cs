@@ -27,7 +27,7 @@
 using System;
 using System.IO;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     internal class FastConverter
     {

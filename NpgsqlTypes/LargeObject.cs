@@ -32,7 +32,7 @@
 
 using System;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Large Object.

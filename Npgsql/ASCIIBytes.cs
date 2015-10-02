@@ -27,7 +27,7 @@
 using System;
 using System.Text;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     internal enum ASCIIBytes : byte
     {

@@ -28,7 +28,7 @@
 
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Represents a PostgreSQL COPY FROM STDIN operation with a corresponding SQL statement

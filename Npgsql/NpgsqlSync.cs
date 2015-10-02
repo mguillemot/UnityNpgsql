@@ -26,7 +26,7 @@
 // ON AN "AS IS" BASIS, AND THE NPGSQL DEVELOPMENT TEAM HAS NO OBLIGATIONS
 // TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents the Sync message sent to PostgreSQL

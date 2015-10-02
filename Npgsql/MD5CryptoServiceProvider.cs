@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// C# implementation of the MD5 cryptographic hash function.

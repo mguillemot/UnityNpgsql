@@ -34,9 +34,9 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.IO;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Provide mapping between type OID, type name, and a NpgsqlBackendTypeInfo object that represents it.

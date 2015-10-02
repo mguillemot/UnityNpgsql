@@ -29,7 +29,7 @@
 using System;
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents the Bind message sent to PostgreSQL

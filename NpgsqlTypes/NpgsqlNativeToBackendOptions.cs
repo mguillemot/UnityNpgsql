@@ -34,9 +34,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Options that control certain aspects of native to backend conversions that depend

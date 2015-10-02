@@ -30,9 +30,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Net;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     internal class ASCIIArrayByteArrays
     {

@@ -29,9 +29,9 @@
 using System;
 using System.Data;
 using System.IO;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Implements <see cref="RowReader"/> for version 3 of the protocol.

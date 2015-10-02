@@ -29,7 +29,7 @@ using System.Reflection;
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// A factory to create instances of various Npgsql objects.

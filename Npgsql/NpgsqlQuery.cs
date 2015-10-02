@@ -28,7 +28,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Summary description for NpgsqlQuery

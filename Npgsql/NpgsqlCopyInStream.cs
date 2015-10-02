@@ -27,7 +27,7 @@
 using System;
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Stream for writing data to a table on a PostgreSQL version 7.4 or newer database during an active COPY FROM STDIN operation.

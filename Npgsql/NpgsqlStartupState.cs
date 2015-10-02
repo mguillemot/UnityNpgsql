@@ -28,7 +28,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     internal sealed class NpgsqlStartupState : NpgsqlState
     {

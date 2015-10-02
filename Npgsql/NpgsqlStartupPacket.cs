@@ -32,7 +32,7 @@ using System.Net;
 using System.Reflection;
 using System.Collections.Generic;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents a StartupPacket message of PostgreSQL

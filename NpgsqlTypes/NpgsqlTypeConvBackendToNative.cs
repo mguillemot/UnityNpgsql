@@ -34,9 +34,9 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Provide event handlers to convert all native supported basic data types from their backend

@@ -27,7 +27,7 @@
 using System;
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Represents an ongoing COPY FROM STDIN operation.

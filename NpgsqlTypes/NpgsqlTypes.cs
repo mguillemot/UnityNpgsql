@@ -32,12 +32,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.NetworkInformation;
-using Npgsql;
+using UnityNpgsql;
 
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Represents a PostgreSQL Point type

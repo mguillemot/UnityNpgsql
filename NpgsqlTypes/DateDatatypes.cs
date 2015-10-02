@@ -28,7 +28,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Npgsql;
+using UnityNpgsql;
 
 //TODO: Lots of convenience methods! There should be nothing you can do with datetime and timestamp that you can't
 //do just as well with these - and hence no reason not to choose these if they are appropriate.
@@ -37,7 +37,7 @@ using Npgsql;
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Represents the PostgreSQL interval datatype.
@@ -56,7 +56,7 @@ namespace NpgsqlTypes
     /// with them a call to <see cref="System.Data.IDataRecord.GetValue(int)"/> on a field containing an
     /// <see cref="NpgsqlInterval"/> value will return a <see cref="TimeSpan"/> rather than an
     /// <see cref="NpgsqlInterval"/>. If you need the extra functionality of <see cref="NpgsqlInterval"/>
-    /// then use <see cref="Npgsql.NpgsqlDataReader.GetInterval(Int32)"/>.</para>
+    /// then use <see cref="UnityNpgsql.NpgsqlDataReader.GetInterval(Int32)"/>.</para>
     /// </remarks>
     /// <seealso cref="Ticks"/>
     /// <seealso cref="JustifyDays"/>
@@ -648,7 +648,7 @@ namespace NpgsqlTypes
         /// canonicalised.</para>
         /// </remarks>
         /// </summary>
-        /// <returns>An <see cref="NpgsqlTypes.NpgsqlInterval"/> based on this one, but with months converted to multiples of &#xB1;30days and with any hours outside of the range [-23, 23]
+        /// <returns>An <see cref="NpgsqlInterval"/> based on this one, but with months converted to multiples of &#xB1;30days and with any hours outside of the range [-23, 23]
         /// converted into days.</returns>
         public NpgsqlInterval Canonicalize()
         {

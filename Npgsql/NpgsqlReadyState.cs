@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     internal sealed class NpgsqlReadyState : NpgsqlState
     {

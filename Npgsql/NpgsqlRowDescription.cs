@@ -31,9 +31,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents a RowDescription message sent from

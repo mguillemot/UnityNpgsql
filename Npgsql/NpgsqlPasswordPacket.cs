@@ -31,7 +31,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents a PasswordPacket message sent to backend

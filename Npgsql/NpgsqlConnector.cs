@@ -36,11 +36,11 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Represents the method that allows the application to provide a certificate collection to be used for SSL clien authentication

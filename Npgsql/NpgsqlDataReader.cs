@@ -34,9 +34,9 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.Threading;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Provides a means of reading a forward-only stream of rows from a PostgreSQL backend.  This class cannot be inherited.
@@ -1302,7 +1302,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Releases the resources used by the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see>.
+        /// Releases the resources used by the <see cref="NpgsqlCommand">NpgsqlCommand</see>.
         /// </summary>
         protected override void Dispose(bool disposing)
         {

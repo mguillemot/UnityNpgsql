@@ -27,7 +27,7 @@
 using System;
 using System.Text;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// The globally available text encoding used for frontend/backend communication.

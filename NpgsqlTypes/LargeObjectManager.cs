@@ -34,9 +34,9 @@
 using System;
 using System.Data;
 using System.Text;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Large Object Manager.

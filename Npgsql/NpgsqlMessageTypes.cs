@@ -28,7 +28,7 @@
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     public enum FrontEndMessageCode :byte
     {

@@ -38,7 +38,7 @@ using System.Text;
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     ///<summary>
     /// This class provides many util methods to handle

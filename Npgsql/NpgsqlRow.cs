@@ -32,9 +32,9 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This is the abstract base class for NpgsqlAsciiRow and NpgsqlBinaryRow.

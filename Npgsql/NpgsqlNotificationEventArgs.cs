@@ -28,7 +28,7 @@
 using System;
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// EventArgs class to send Notification parameters.

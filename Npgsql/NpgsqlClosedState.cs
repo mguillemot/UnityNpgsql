@@ -34,7 +34,7 @@ using System.Reflection;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
 
     internal class NpgsqlNetworkStream : NetworkStream

@@ -26,7 +26,7 @@ using System;
 using System.Reflection;
 using System.Transactions;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     internal class NpgsqlPromotableSinglePhaseNotification : IPromotableSinglePhaseNotification
     {

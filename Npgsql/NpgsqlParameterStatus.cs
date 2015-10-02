@@ -27,7 +27,7 @@
 
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents the ParameterStatus message sent from PostgreSQL

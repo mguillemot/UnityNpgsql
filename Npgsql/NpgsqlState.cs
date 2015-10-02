@@ -37,7 +37,7 @@ using System.Resources;
 using System.Text;
 using System.Threading;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     ///<summary> This class represents the base class for the state pattern design pattern
     /// implementation.

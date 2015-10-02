@@ -27,7 +27,7 @@
 // Keep the xml comment warning quiet for this file.
 #pragma warning disable 1591
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     public enum NpgsqlDbType
     {

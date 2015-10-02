@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This is the base class for NpgsqlDescribeStatement and NpgsqlDescribePortal.

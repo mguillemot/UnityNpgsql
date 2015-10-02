@@ -34,9 +34,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// This class implements the Fastpath api.

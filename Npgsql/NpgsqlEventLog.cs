@@ -33,7 +33,7 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// The level of verbosity of the NpgsqlEventLog
@@ -108,14 +108,14 @@ namespace Npgsql
         // Event/Debug Logging
         // This method should be private and only used by the internal methods that support localization.
         /// <summary>
-        /// Writes a string to the Npgsql event log if msglevel is bigger then <see cref="Npgsql.NpgsqlEventLog.Level">NpgsqlEventLog.Level</see>
+        /// Writes a string to the Npgsql event log if msglevel is bigger then <see cref="NpgsqlEventLog.Level">NpgsqlEventLog.Level</see>
         /// </summary>
         /// <remarks>
         /// This method is obsolete and should no longer be used.
         /// It is likely to be removed in future versions of Npgsql
         /// </remarks>
         /// <param name="message">The message to write to the event log</param>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         private static void LogMsg(String message, LogLevel msglevel)
         {
             if (msglevel > Level)
@@ -146,11 +146,11 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Writes a string to the Npgsql event log if msglevel is bigger then <see cref="Npgsql.NpgsqlEventLog.Level">NpgsqlEventLog.Level</see>
+        /// Writes a string to the Npgsql event log if msglevel is bigger then <see cref="NpgsqlEventLog.Level">NpgsqlEventLog.Level</see>
         /// </summary>
         /// <param name="resman">The <see cref="System.Resources.ResourceManager">ResourceManager</see> to get the localized resources</param>
         /// <param name="ResourceString">The name of the resource that should be fetched by the <see cref="System.Resources.ResourceManager">ResourceManager</see></param>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="Parameters">The additional parameters that shall be included into the log-message (must be compatible with the string in the resource):</param>
         internal static void LogMsg(string ResourceString, LogLevel msglevel,
                                     params Object[] Parameters)
@@ -172,7 +172,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling the Get-part of an Indexer to the log file.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Indexer</param>
         /// <param name="IndexerParam">The parameter given to the Indexer</param>
         internal static void LogIndexerGet(LogLevel msglevel, string ClassName, object IndexerParam)
@@ -188,7 +188,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling the Set-part of an Indexer to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Indexer</param>
         /// <param name="IndexerParam">The parameter given to the Indexer</param>
         /// <param name="value">The value the Indexer is set to</param>
@@ -205,7 +205,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling the Get-part of a Property to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Property</param>
         /// <param name="PropertyName">The name of the Property</param>
         internal static void LogPropertyGet(LogLevel msglevel, string ClassName, string PropertyName)
@@ -221,7 +221,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling the Set-part of a Property to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Property</param>
         /// <param name="PropertyName">The name of the Property</param>
         /// <param name="value">The value the Property is set to</param>
@@ -238,7 +238,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling a Method without Arguments to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Method</param>
         /// <param name="MethodName">The name of the Method</param>
         internal static void LogMethodEnter(LogLevel msglevel, string ClassName, string MethodName)
@@ -254,7 +254,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling a Method with one Argument to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Method</param>
         /// <param name="MethodName">The name of the Method</param>
         /// <param name="MethodParameter">The value of the Argument of the Method</param>
@@ -271,7 +271,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling a Method with two Arguments to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Method</param>
         /// <param name="MethodName">The name of the Method</param>
         /// <param name="MethodParameter1">The value of the first Argument of the Method</param>
@@ -290,7 +290,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling a Method with three Arguments to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Method</param>
         /// <param name="MethodName">The name of the Method</param>
         /// <param name="MethodParameter1">The value of the first Argument of the Method</param>
@@ -310,7 +310,7 @@ namespace Npgsql
         /// <summary>
         /// Writes the default log-message for the action of calling a Method with more than three Arguments to the logfile.
         /// </summary>
-        /// <param name="msglevel">The minimum <see cref="Npgsql.LogLevel">LogLevel</see> for which this message should be logged.</param>
+        /// <param name="msglevel">The minimum <see cref="LogLevel">LogLevel</see> for which this message should be logged.</param>
         /// <param name="ClassName">The name of the class that contains the Method</param>
         /// <param name="MethodName">The name of the Method</param>
         /// <param name="MethodParameters">A <see cref="System.Object">Object</see>-Array with zero or more Ojects that are Arguments of the Method.</param>

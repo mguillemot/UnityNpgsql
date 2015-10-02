@@ -27,7 +27,7 @@
 
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     internal sealed class NpgsqlConnectedState : NpgsqlState
     {

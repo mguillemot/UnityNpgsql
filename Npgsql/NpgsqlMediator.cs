@@ -30,7 +30,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     ///<summary>
     /// This class is responsible for serving as bridge between the backend

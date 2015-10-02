@@ -33,9 +33,9 @@
 
 using System;
 using System.IO;
-using Npgsql;
+using UnityNpgsql;
 
-namespace NpgsqlTypes
+namespace UnityNpgsqlTypes
 {
     /// <summary>
     /// Fast Path Arg.

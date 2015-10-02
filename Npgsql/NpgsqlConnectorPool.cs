@@ -33,7 +33,7 @@ using System.Threading;
 using System.Timers;
 using Timer = System.Timers.Timer;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class manages all connector objects, pooled AND non-pooled.

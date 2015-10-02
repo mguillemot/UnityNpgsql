@@ -29,7 +29,7 @@
 
 using System.IO;
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// This class represents a BackEndKeyData message received

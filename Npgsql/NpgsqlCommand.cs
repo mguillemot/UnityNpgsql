@@ -36,13 +36,13 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
-using NpgsqlTypes;
+using UnityNpgsqlTypes;
 
 #if WITHDESIGN
 
 #endif
 
-namespace Npgsql
+namespace UnityNpgsql
 {
     /// <summary>
     /// Represents a SQL statement or function (stored procedure) to execute
@@ -130,7 +130,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> class.
+        /// Initializes a new instance of the <see cref="NpgsqlCommand">NpgsqlCommand</see> class.
         /// </summary>
         public NpgsqlCommand()
             : this(String.Empty, null, null)
@@ -138,7 +138,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> class with the text of the query.
+        /// Initializes a new instance of the <see cref="NpgsqlCommand">NpgsqlCommand</see> class with the text of the query.
         /// </summary>
         /// <param name="cmdText">The text of the query.</param>
         public NpgsqlCommand(String cmdText)
@@ -147,21 +147,21 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> class with the text of the query and a <see cref="Npgsql.NpgsqlConnection">NpgsqlConnection</see>.
+        /// Initializes a new instance of the <see cref="NpgsqlCommand">NpgsqlCommand</see> class with the text of the query and a <see cref="NpgsqlConnection">NpgsqlConnection</see>.
         /// </summary>
         /// <param name="cmdText">The text of the query.</param>
-        /// <param name="connection">A <see cref="Npgsql.NpgsqlConnection">NpgsqlConnection</see> that represents the connection to a PostgreSQL server.</param>
+        /// <param name="connection">A <see cref="NpgsqlConnection">NpgsqlConnection</see> that represents the connection to a PostgreSQL server.</param>
         public NpgsqlCommand(String cmdText, NpgsqlConnection connection)
             : this(cmdText, connection, null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> class with the text of the query, a <see cref="Npgsql.NpgsqlConnection">NpgsqlConnection</see>, and the <see cref="Npgsql.NpgsqlTransaction">NpgsqlTransaction</see>.
+        /// Initializes a new instance of the <see cref="NpgsqlCommand">NpgsqlCommand</see> class with the text of the query, a <see cref="NpgsqlConnection">NpgsqlConnection</see>, and the <see cref="NpgsqlTransaction">NpgsqlTransaction</see>.
         /// </summary>
         /// <param name="cmdText">The text of the query.</param>
-        /// <param name="connection">A <see cref="Npgsql.NpgsqlConnection">NpgsqlConnection</see> that represents the connection to a PostgreSQL server.</param>
-        /// <param name="transaction">The <see cref="Npgsql.NpgsqlTransaction">NpgsqlTransaction</see> in which the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> executes.</param>
+        /// <param name="connection">A <see cref="NpgsqlConnection">NpgsqlConnection</see> that represents the connection to a PostgreSQL server.</param>
+        /// <param name="transaction">The <see cref="NpgsqlTransaction">NpgsqlTransaction</see> in which the <see cref="NpgsqlCommand">NpgsqlCommand</see> executes.</param>
         public NpgsqlCommand(String cmdText, NpgsqlConnection connection, NpgsqlTransaction transaction)
         {
             NpgsqlEventLog.LogMethodEnter(LogLevel.Debug, CLASSNAME, CLASSNAME);
@@ -251,7 +251,7 @@ namespace Npgsql
 
         /// <summary>
         /// Gets or sets a value indicating how the
-        /// <see cref="Npgsql.NpgsqlCommand.CommandText">CommandText</see> property is to be interpreted.
+        /// <see cref="NpgsqlCommand.CommandText">CommandText</see> property is to be interpreted.
         /// </summary>
         /// <value>One of the <see cref="System.Data.CommandType">CommandType</see> values. The default is <see cref="System.Data.CommandType">CommandType.Text</see>.</value>
         [Category("Data"), DefaultValue(CommandType.Text)]
@@ -281,8 +281,8 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="Npgsql.NpgsqlConnection">NpgsqlConnection</see>
-        /// used by this instance of the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see>.
+        /// Gets or sets the <see cref="NpgsqlConnection">NpgsqlConnection</see>
+        /// used by this instance of the <see cref="NpgsqlCommand">NpgsqlCommand</see>.
         /// </summary>
         /// <value>The connection to a data source. The default value is a null reference.</value>
         [Category("Behavior"), DefaultValue(null)]
@@ -348,7 +348,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Gets the <see cref="Npgsql.NpgsqlParameterCollection">NpgsqlParameterCollection</see>.
+        /// Gets the <see cref="NpgsqlParameterCollection">NpgsqlParameterCollection</see>.
         /// </summary>
         /// <value>The parameters of the SQL statement or function (stored procedure). The default is an empty collection.</value>
 #if WITHDESIGN
@@ -378,10 +378,10 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="Npgsql.NpgsqlTransaction">NpgsqlTransaction</see>
-        /// within which the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see> executes.
+        /// Gets or sets the <see cref="NpgsqlTransaction">NpgsqlTransaction</see>
+        /// within which the <see cref="NpgsqlCommand">NpgsqlCommand</see> executes.
         /// </summary>
-        /// <value>The <see cref="Npgsql.NpgsqlTransaction">NpgsqlTransaction</see>.
+        /// <value>The <see cref="NpgsqlTransaction">NpgsqlTransaction</see>.
         /// The default value is a null reference.</value>
 #if WITHDESIGN
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -500,7 +500,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Attempts to cancel the execution of a <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see>.
+        /// Attempts to cancel the execution of a <see cref="NpgsqlCommand">NpgsqlCommand</see>.
         /// </summary>
         /// <remarks>This Method isn't implemented yet.</remarks>
         public override void Cancel()
@@ -570,9 +570,9 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Creates a new instance of a <see cref="Npgsql.NpgsqlParameter">NpgsqlParameter</see> object.
+        /// Creates a new instance of a <see cref="NpgsqlParameter">NpgsqlParameter</see> object.
         /// </summary>
-        /// <returns>A <see cref="Npgsql.NpgsqlParameter">NpgsqlParameter</see> object.</returns>
+        /// <returns>A <see cref="NpgsqlParameter">NpgsqlParameter</see> object.</returns>
         public new NpgsqlParameter CreateParameter()
         {
             NpgsqlEventLog.LogMethodEnter(LogLevel.Debug, CLASSNAME, "CreateParameter");
@@ -581,7 +581,7 @@ namespace Npgsql
         }
 
         /// <summary>
-        /// Releases the resources used by the <see cref="Npgsql.NpgsqlCommand">NpgsqlCommand</see>.
+        /// Releases the resources used by the <see cref="NpgsqlCommand">NpgsqlCommand</see>.
         /// </summary>
         protected override void Dispose(bool disposing)
         {
