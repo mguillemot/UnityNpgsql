@@ -30,8 +30,6 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.Reflection;
-using System.Resources;
-using System.Text;
 using System.Threading;
 
 namespace Npgsql
@@ -124,7 +122,7 @@ namespace Npgsql
         {
             if (disposing && this._conn != null)
             {
-                if (_conn.Connector.Transaction != null)
+                if (_conn.Connector != null && _conn.Connector.Transaction != null)
                 {
                     if ((Thread.CurrentThread.ThreadState & (ThreadState.Aborted | ThreadState.AbortRequested)) != 0)
                     {

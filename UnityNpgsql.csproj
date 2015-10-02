@@ -7,7 +7,7 @@
     <ProjectGuid>{3BA298DE-CC9A-4F5E-88BB-28F06B58D6DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Npgsql</RootNamespace>
+    <RootNamespace>UnityNpgsql</RootNamespace>
     <AssemblyName>UnityNpgsql</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

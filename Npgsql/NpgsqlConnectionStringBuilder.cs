@@ -210,6 +210,7 @@ namespace Npgsql
             valueDescriptions.Add(Keywords.Database, new ValueDescription(typeof(string)));
             valueDescriptions.Add(Keywords.UserName, new ValueDescription(typeof(string)));
             valueDescriptions.Add(Keywords.Password, new ValueDescription(typeof(string)));
+            valueDescriptions.Add(Keywords.Krbsrvname, new ValueDescription("POSTGRES"));
             valueDescriptions.Add(Keywords.SSL, new ValueDescription(typeof(bool)));
             valueDescriptions.Add(Keywords.SslMode, new ValueDescription(typeof(SslMode)));
 #pragma warning disable 618
@@ -269,8 +270,7 @@ namespace Npgsql
             if ((MaxPoolSize > 0) && (MinPoolSize > MaxPoolSize))
             {
                 string key = GetKeyName(Keywords.MinPoolSize);
-                throw new ArgumentOutOfRangeException(
-                    key, "Exception_IntegerKeyValMax");
+                throw new ArgumentOutOfRangeException(key, "Exception_IntegerKeyValMax " + key + "/" + MaxPoolSize);
             }
         }
 
@@ -296,15 +296,13 @@ namespace Npgsql
             {
                 string key = GetKeyName(keyword);
 
-                throw new ArgumentOutOfRangeException(
-                    key, "Exception_IntegerKeyValMin");
+                throw new ArgumentOutOfRangeException(key, "Exception_IntegerKeyValMin " + key + "/" + min);
             }
             else if (v > max)
             {
                 string key = GetKeyName(keyword);
 
-                throw new ArgumentOutOfRangeException(
-                    key, "Exception_IntegerKeyValMax");
+                throw new ArgumentOutOfRangeException(key, "Exception_IntegerKeyValMax " + key + "/" + max);
             }
 
             return v;
@@ -421,20 +419,6 @@ namespace Npgsql
             set { SetValue(GetKeyName(Keywords.Database), Keywords.Database, value); }
         }
 
-    #region Integrated security
-        class CachedUpn {
-            public string Upn;
-            public DateTime ExpiryTimeUtc;
-        }
-
-        static Dictionary<SecurityIdentifier, CachedUpn> cachedUpns = new Dictionary<SecurityIdentifier,CachedUpn>();
-
-        private string GetIntegratedUserName()
-        {
-            throw new NotSupportedException();
-        }
-    #endregion
-
         private string _username;
         /// <summary>
         /// Gets or sets the login user name.
@@ -452,11 +436,6 @@ namespace Npgsql
         {
             get
             {
-                if ((_integrated_security) && (String.IsNullOrEmpty(_username)))
-                {
-                    _username = GetIntegratedUserName();
-                }
-
                 return _username;
             }
 
@@ -496,6 +475,25 @@ namespace Npgsql
         {
             get { return String.Empty; }
             set { SetValue(GetKeyName(Keywords.Password), Keywords.Password, value); }
+        }
+
+        private string _krbsrvname;
+        /// <summary>
+        /// Gets or sets the krbsrvname.
+        /// </summary>
+#if !DNXCORE50
+        [Category("DataCategory_Security")]
+        [NpgsqlConnectionStringKeyword(Keywords.Krbsrvname)]
+        [NpgsqlConnectionStringAcceptableKeyword("KRBSRVNAME")]
+        [DisplayName("ConnectionProperty_Display_Krbsrvname")]
+        [Description("ConnectionProperty_Description_Krbsrvname")]
+        [RefreshProperties(RefreshProperties.All)]
+        [PasswordPropertyText(true)]
+#endif
+        public string Krbsrvname
+        {
+            get { return _krbsrvname; }
+            set { SetValue(GetKeyName(Keywords.Krbsrvname), Keywords.Krbsrvname, value); }
         }
 
         private bool _ssl;
@@ -840,6 +838,8 @@ namespace Npgsql
                 case "PSW":
                 case "PWD":
                     return Keywords.Password;
+                case "KRBSRVNAME":
+                    return Keywords.Krbsrvname;
                 case "SSL":
                     return Keywords.SSL;
                 case "SSLMODE":
@@ -884,7 +884,7 @@ namespace Npgsql
                 case "ALWAYSPREPARE":
                     return Keywords.AlwaysPrepare;
                 default:
-                    throw new ArgumentException("Exception_WrongKeyVal", key);
+                    throw new ArgumentException("Exception_WrongKeyVal: " + key);
             }
         }
 
@@ -906,6 +906,8 @@ namespace Npgsql
                     return "USER ID";
                 case Keywords.Password:
                     return "PASSWORD";
+                case Keywords.Krbsrvname:
+                    return "KRBSRVNAME";
                 case Keywords.SSL:
                     return "SSL";
                 case Keywords.SslMode:
@@ -1064,6 +1066,8 @@ namespace Npgsql
                     case Keywords.Password:
                         this._password.Password = value as string;
                         return value as string;
+                    case Keywords.Krbsrvname:
+                        return this._krbsrvname = Convert.ToString(value);
                     case Keywords.SSL:
                         return this._ssl = ToBoolean(value);
                     case Keywords.SslMode:
@@ -1147,7 +1151,7 @@ namespace Npgsql
                 {
                     string key_name = GetKeyName(keyword);
 
-                    throw new ArgumentException(string.Format(exception_template, key_name), key_name, exception);
+                    throw new ArgumentException(exception_template, key_name + " " + key_name, exception);
                 }
 
                 throw;
@@ -1179,6 +1183,8 @@ namespace Npgsql
                     return this._username;
                 case Keywords.Password:
                     return this._password.Password;
+                case Keywords.Krbsrvname:
+                    return this._krbsrvname;
                 case Keywords.SSL:
                     return this._ssl;
                 case Keywords.SslMode:
@@ -1289,6 +1295,7 @@ namespace Npgsql
         Database,
         UserName,
         Password,
+        Krbsrvname,
         SSL,
         SslMode,
         [Obsolete("UTF-8 is always used regardless of this setting.")]
