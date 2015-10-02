@@ -73,7 +73,7 @@ namespace UnityNpgsql
         /// The parameter name format is <b>:ParameterName</b>.
         /// </summary>
         /// <returns>A version of <see cref="NpgsqlCommand.CommandText">CommandText</see> with the <see cref="NpgsqlCommand.Parameters">Parameters</see> inserted.</returns>
-        internal byte[] GetCommandText()
+        public byte[] GetCommandText() // Erhune: internal->public
         {
             NpgsqlEventLog.LogMethodEnter(LogLevel.Debug, CLASSNAME, "GetCommandText");
 
